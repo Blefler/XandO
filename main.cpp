@@ -23,7 +23,7 @@ int main()
   int column;
   bool playing = true; //Continue playing by default
   char winner = ' ';
-  bool won = true;
+  bool won = false;
   do
   {
     cout<<turn<<"'s turn.\n";
@@ -92,7 +92,7 @@ if (board[1][1]!=BLANK&&((board[1][1]==board[0][0]&&board[1][1]==board[2][2])||(
 if (won == true)
   {
    cout<<"Winner is "<<winner<<endl;
-   cout<<"Goodbye!\n";
   }
+   cout<<"Goodbye!\n";
   return 0;
   }
