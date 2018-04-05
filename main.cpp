@@ -1,4 +1,4 @@
-//Author:
+//Author: Brad Lefler
 #include <iostream>
 
 using namespace std;
@@ -86,8 +86,10 @@ if (((board[1][1]==board[0][0])&&(board[1][1]==board[2][2]))||((board[1][1]==boa
   }
   
   }while( playing );
-
-  cout<<"Goodbye!\n";
-
+if (won == true)
+  {
+   cout<<"Winner is "<<winner<<endl;
+   cout<<"Goodbye!\n";
+  }
   return 0;
-}
+  }
