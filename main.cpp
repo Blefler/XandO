@@ -22,7 +22,8 @@ int main()
   int row;
   int column;
   bool playing = true; //Continue playing by default
-
+  char winner = ' ';
+  bool won = true;
   do
   {
     cout<<turn<<"'s turn.\n";
@@ -56,7 +57,34 @@ int main()
         cout<<board[0][0]<<" "<<board[0][1]<<" "<<board[0][2]<<" "<<endl;
         cout<<board[1][0]<<" "<<board[1][1]<<" "<<board[1][2]<<" "<<endl;
         cout<<board[2][0]<<" "<<board[2][1]<<" "<<board[2][2]<<" "<<endl;
-    
+
+   // for (int r = 0; r<2; r++)
+     // {
+      // for (int c = 0; c<2; c++)
+       // {
+
+for (int i = 0; i<2; i++)
+  {
+   if ((board[i][0]==board[i][1])&&(board[i][0]==board[i][2]))
+     {
+      playing = false;
+      won = true;
+      winner = board[i][0]; 
+     }
+   if ((board[0][i]==board[1][i])&&(board[0][i]==board[2][i]))
+     {
+      playing = false;
+      won = true;
+      winner = board[0][i];
+     }  
+  }
+if (((board[1][1]==board[0][0])&&(board[1][1]==board[2][2]))||((board[1][1]==board[0][2])&&(board[1][1]==board[2][0])))
+  {
+   playing = false;
+   won = true;
+   winner = board[1][1];
+  }
+  
   }while( playing );
 
   cout<<"Goodbye!\n";
